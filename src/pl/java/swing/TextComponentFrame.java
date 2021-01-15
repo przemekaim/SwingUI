@@ -41,6 +41,8 @@ public class TextComponentFrame extends JFrame {
         JPanel westPanel = new JPanel();
         westPanel.setBackground(Color.BLUE);
         add(westPanel, BorderLayout.WEST);
+
+
     }
 
     public Dimension getPreferredSize() {
