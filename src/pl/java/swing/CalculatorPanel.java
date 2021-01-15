@@ -5,16 +5,20 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CalculatorPanel extends JPanel
-{
+public class CalculatorPanel extends JPanel {
     private JButton display;
     private JPanel panel;
     private double result;
     private String lastCommand;
     private boolean start;
 
-    public CalculatorPanel()
-    {
+
+    public Dimension getPreferredSize() {
+        return new Dimension(300, 300);
+    }
+
+    public CalculatorPanel() {
+
         setLayout(new BorderLayout());
 
         result = 0;
@@ -60,12 +64,12 @@ public class CalculatorPanel extends JPanel
 
     /**
      * Dodaje przycisk do panelu centralnego.
-     * @param label etykieta przycisku
+     *
+     * @param label    etykieta przycisku
      * @param listener s�uchacz przycisk�w
      */
 
-    private void addButton(String label, ActionListener listener)
-    {
+    private void addButton(String label, ActionListener listener) {
         JButton button = new JButton(label);
         button.addActionListener(listener);
         panel.add(button);
@@ -75,13 +79,10 @@ public class CalculatorPanel extends JPanel
      * Niniejsza akcja wstawia �a�cuch akcji przycisku na ko�cu tekstu do wy�wietlenia.
      */
 
-    private class InsertAction implements ActionListener
-    {
-        public void actionPerformed(ActionEvent event)
-        {
+    private class InsertAction implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
             String input = event.getActionCommand();
-            if (start)
-            {
+            if (start) {
                 display.setText("");
                 start = false;
             }
@@ -93,24 +94,17 @@ public class CalculatorPanel extends JPanel
      * Niniejsza akcja wykonuje polecenia okre�lone przez akcj� przycisku.
      */
 
-    private class CommandAction implements ActionListener
-    {
-        public void actionPerformed(ActionEvent event)
-        {
+    private class CommandAction implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
             String command = event.getActionCommand();
 
-            if (start)
-            {
+            if (start) {
 
-                if (command.equals("-"))
-                {
+                if (command.equals("-")) {
                     display.setText(command);
                     start = false;
-                }
-                else lastCommand = command;
-            }
-            else
-            {
+                } else lastCommand = command;
+            } else {
                 calculate(Double.parseDouble(display.getText()));
                 lastCommand = command;
                 start = true;
@@ -120,11 +114,11 @@ public class CalculatorPanel extends JPanel
 
     /**
      * Wykonuje oczekuj�ce dzia�ania.
+     *
      * @param x warto��, kt�ra ma by� po��czona z poprzednim wynikiem.
      */
 
-    public void calculate(double x)
-    {
+    public void calculate(double x) {
         if (lastCommand.equals("+")) result += x;
         else if (lastCommand.equals("-")) result -= x;
         else if (lastCommand.equals("*")) result *= x;

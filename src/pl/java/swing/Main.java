@@ -6,7 +6,7 @@ import java.awt.*;
 public class Main {
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
-            JFrame frame = new CalculatorFrame();
+            JFrame frame = new TextComponentFrame();
             frame.setVisible(true);
             frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             frame.setLocationRelativeTo(null);
