@@ -10,7 +10,7 @@ public class RadioButtonFrame extends JFrame {
     private ButtonGroup group;
     private static final int DEFAULT_SIZE = 36;
 
-    public RadioButtonFrame () {
+    public RadioButtonFrame() {
         label = new JLabel("Kon i zolw grali w kosci...");
         label.setFont(new Font(Font.SERIF, Font.PLAIN, DEFAULT_SIZE));
         add(label, BorderLayout.CENTER);
@@ -25,17 +25,22 @@ public class RadioButtonFrame extends JFrame {
         addRadioButton("Bardzo duza", 36);
 
         add(buttonPanel, BorderLayout.SOUTH);
+        setTitle("RadioButton");
         pack();
     }
 
     public void addRadioButton(String name, final int size) {
+/*        boolean s = false;
+        if (size == DEFAULT_SIZE) s = true;
+        */
         boolean selected = size == DEFAULT_SIZE;
         JRadioButton radioButton = new JRadioButton(name, selected);
         group.add(radioButton);
         buttonPanel.add(radioButton);
 
         ActionListener listener = event -> {
-            label.setFont(new Font("Serif", Font.PLAIN, size));;
+            label.setFont(new Font("Serif", Font.PLAIN, size));
+            ;
         };
 
         radioButton.addActionListener(listener);

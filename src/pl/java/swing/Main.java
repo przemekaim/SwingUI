@@ -34,6 +34,18 @@ public class Main {
                 frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 frame.setLocationRelativeTo(null);
             });
+            case 5 -> EventQueue.invokeLater(() -> {
+                JFrame frame = new BorderFrame();
+                frame.setVisible(true);
+                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+            });
+            case 6 -> EventQueue.invokeLater(() -> {
+                JFrame frame = new ComboBoxFrame();
+                frame.setVisible(true);
+                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+            });
         }
 
     }
