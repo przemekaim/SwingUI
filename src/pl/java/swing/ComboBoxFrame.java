@@ -20,6 +20,7 @@ public class ComboBoxFrame extends JFrame {
         faceCombo.addItem("Dialog");
         faceCombo.addItem("DialogInput");
 
+
         faceCombo.addActionListener(event ->
                 label.setFont(new Font(faceCombo.getItemAt(faceCombo.getSelectedIndex()), Font.PLAIN, DEFAULT_SIZE)));
 

@@ -46,6 +46,12 @@ public class Main {
                 frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 frame.setLocationRelativeTo(null);
             });
+            case 7 -> EventQueue.invokeLater(() -> {
+                JFrame frame = new SliderFrame();
+                frame.setVisible(true);
+                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+            });
         }
 
     }
